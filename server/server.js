@@ -15,8 +15,14 @@ const app = express();
 
 // Middleware
 // Middleware
+// app.use(cors({ 
+//   origin: ['http://localhost:5173', 'http://localhost:4000'], // Allow both origins
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
+//   allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
+// }));app.use(express.json());
+
 app.use(cors({ 
-  origin: ['http://localhost:5173', 'http://localhost:4000'], // Allow both origins
+  origin: ['http://frontend.yogeshtech.xyz'], // Allow both origins
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
 }));app.use(express.json());

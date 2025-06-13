@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './AdminPage.module.css';
 
+const apiUrl = process.env.REACT_APP_BACKEND_URL;
+
 const AdminPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -63,7 +65,7 @@ const AdminPage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/products', data, {
+      const response = await axios.post(`${apiUrl}/api/products`, data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

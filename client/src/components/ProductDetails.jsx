@@ -317,6 +317,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styles from './ProductDetails.module.css';
+const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -327,7 +328,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/products/${id}`);
+        const response = await axios.get(`${apiUrl}/api/products/${id}`);
         setProduct(response.data);
         setLoading(false);
       } catch (err) {
@@ -342,7 +343,7 @@ const ProductDetails = () => {
 
   const handleAffiliateClick = async (linkIndex) => {
     try {
-      await axios.post(`http://localhost:5000/api/products/${id}/affiliate-click/${linkIndex}`);
+      await axios.post(`${apiUrl}/api/products/${id}/affiliate-click/${linkIndex}`);
     } catch (err) {
       console.error('Error tracking affiliate click:', err);
     }
@@ -350,7 +351,7 @@ const ProductDetails = () => {
 
   const handleBuyNow = async () => {
     try {
-      await axios.post(`http://localhost:5000/api/products/${id}/conversion`);
+      await axios.post(`${apiUrl}/api/products/${id}/conversion`);
       alert('Purchase recorded!'); // Replace with actual purchase logic
     } catch (err) {
       console.error('Error tracking conversion:', err);
@@ -366,7 +367,7 @@ const ProductDetails = () => {
       <div className={styles.mainSection}>
         <div className={styles.imageSection}>
           <img
-            src={product.image ? `http://localhost:5000${product.image}` : 'https://via.placeholder.com/400'}
+            src={product.image ? `${apiUrl}${product.image}` : 'https://via.placeholder.com/400'}
             alt={product.name}
             className={styles.productImage}
           />

@@ -510,6 +510,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import InfiniteScroll from 'react-infinite-scroll-component'; // Import InfiniteScroll
+const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 const ShopPage = () => {
   
@@ -548,7 +549,7 @@ const ShopPage = () => {
   const fetchCart = async () => {
     if (!userUid) return;
     try {
-      const response = await axios.get('http://localhost:5000/api/cart', {
+      const response = await axios.get(`${apiUrl}/api/cart`, {
         headers: {
           Authorization: `Bearer ${userUid}`,
         },
@@ -689,7 +690,7 @@ const ShopPage = () => {
   const handleRemoveFromCart = async (productId) => {
     if (!userUid) return;
     try {
-      await axios.delete(`http://localhost:5000/api/cart/remove/${productId}`, {
+      await axios.delete(`${apiUrl}/api/cart/remove/${productId}`, {
         headers: {
           Authorization: `Bearer ${userUid}`,
         },

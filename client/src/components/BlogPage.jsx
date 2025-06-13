@@ -112,6 +112,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styles from './BlogPage.module.css';
+const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
@@ -123,7 +124,7 @@ const BlogPage = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/blogs');
+      const res = await axios.get(`${apiUrl}/api/blogs`);
       setBlogs(res.data);
     } catch (err) {
       console.error('Error fetching blogs:', err);
@@ -137,7 +138,7 @@ const BlogPage = () => {
   const trackViews = async () => {
     for (const blog of blogs) {
       try {
-        await axios.post(`http://localhost:5000/api/blogs/track-view/${blog._id}`);
+        await axios.post(`${apiUrl}/api/blogs/track-view/${blog._id}`);
       } catch (err) {
         console.error('Error tracking view:', err);
       }

@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
       if (token) {
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         try {
-          const res = await axios.get('http://localhost:5000/api/auth/profile');
+          const res = await axios.get(`${apiUrl}/api/auth/profile`);
           if (res.data.email && typeof res.data.email === 'string') {
             console.log('Profile fetched successfully:', res.data);
             const username = res.data.email.split('@')[0];
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const lowercaseEmail = email.toLowerCase();
       console.log('Login request body:', { email: lowercaseEmail, password });
-      const res = await axios.post('http://localhost:5000/api/auth/login', { email: lowercaseEmail, password });
+      const res = await axios.post(`${apiUrl}/api/auth/login`, { email: lowercaseEmail, password });
       const { token, email: userEmail } = res.data;
       if (!userEmail || typeof userEmail !== 'string') {
         throw new Error('Email not found in login response');
@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const lowercaseEmail = email.toLowerCase();
       console.log('Signup request body:', { email: lowercaseEmail, password });
-      const res = await axios.post('http://localhost:5000/api/auth/signup', { email: lowercaseEmail, password });
+      const res = await axios.post(`${apiUrl}/api/auth/signup`, { email: lowercaseEmail, password });
       const { token } = res.data;
       if (!lowercaseEmail || typeof lowercaseEmail !== 'string') {
         throw new Error('Email not found in signup request');

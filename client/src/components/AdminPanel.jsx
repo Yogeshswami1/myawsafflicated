@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { Modal, Button } from 'antd';
 import styles from './AdminPanel.module.css';
+const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 const AdminPanel = () => {
   const [products, setProducts] = useState([]);
@@ -26,7 +27,7 @@ const AdminPanel = () => {
   const fetchProducts = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/products');
+      const response = await axios.get(`${apiUrl}/api/products`);
       console.log('Fetched products:', response.data);
       setProducts(response.data);
     } catch (err) {
@@ -61,14 +62,14 @@ const AdminPanel = () => {
     try {
       if (editingProduct) {
         const response = await axios.put(
-          `http://localhost:5000/api/products/${editingProduct._id}`,
+          `${apiUrl}/api/products/${editingProduct._id}`,
           data,
           { headers: { 'Content-Type': 'multipart/form-data' } }
         );
         setProducts(products.map((p) => (p._id === editingProduct._id ? response.data : p)));
         setMessage('Product updated successfully!');
       } else {
-        const response = await axios.post('http://localhost:5000/api/products', data, {
+        const response = await axios.post(`${apiUrl}/api/products`, data, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
         setProducts([...products, response.data]);
@@ -88,7 +89,7 @@ const AdminPanel = () => {
   const handleDelete = async (id) => {
     setLoading(true);
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`);
+      await axios.delete(`${apiUrl}/api/products/${id}`);
       setProducts(products.filter((product) => product._id !== id));
       setMessage('Product deleted successfully!');
       window.dispatchEvent(new Event('productAdded'));

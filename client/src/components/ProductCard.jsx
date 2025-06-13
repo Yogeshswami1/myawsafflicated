@@ -106,6 +106,7 @@ import styles from './ProductCard.module.css';
 import { Button } from '@mui/material';
 import axios from 'axios';
 import { motion } from 'framer-motion';
+const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 const ProductCard = ({ product, onAddToCart, userUid }) => {
   const renderStars = (rating) => {
@@ -131,7 +132,7 @@ const ProductCard = ({ product, onAddToCart, userUid }) => {
       };
 
       await axios.post(
-        'http://localhost:5000/api/cart/add',
+        `${apiUrl}/api/cart/add`,
         cartItem,
         {
           headers: {

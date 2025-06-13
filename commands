@@ -1,0 +1,22 @@
+frontend
+
+sudo nano /etc/nginx/sites-available/frontend.yogeshtech.xyz
+
+server {
+    listen 80;
+    server_name frontend.yogeshtech.xyz; #  Replace it with your own domain 
+
+    root /var/www/html/amazon/client/dist; # Replace with the path to your build directory
+    index index.html;
+
+    location / {
+        try_files $uri /index.html;
+    }
+
+    error_log /var/log/nginx/frontend.yogeshtech.xyz.log;
+    access_log /var/log/nginx/frontend.yogeshtech.xyz.log;
+}
+
+sudo ln -s /etc/nginx/sites-available/frontend.yogeshtech.xyz /etc/nginx/sites-enabled/
+
+
