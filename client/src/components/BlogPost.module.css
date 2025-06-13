@@ -1,0 +1,340 @@
+.blogPost {
+  padding: 2rem;
+  background: #f1f3f5;
+  min-height: calc(100vh - 60px);
+  position: relative;
+}
+
+.featuredImage {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+  border-radius: 0.5rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.postTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.metadata {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 2rem;
+}
+
+.metadata span {
+  background: #e5e7eb;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
+
+.adSensePlaceholder {
+  background: #e5e7eb;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.adSensePlaceholder p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4b5563;
+}
+
+.content p {
+  margin-bottom: 1rem;
+}
+
+.content .affiliate-box {
+  background: #ffedd5;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.content .affiliate-box h4 {
+  font-size: 1.1rem;
+  color: #d97706;
+  margin: 0 0 0.5rem;
+}
+
+.content .affiliate-box p {
+  margin: 0;
+}
+
+.content .affiliate-box a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.content .affiliate-box a:hover {
+  text-decoration: underline;
+}
+
+.productMentioned {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.productMentioned h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212121;
+  margin-bottom: 1rem;
+}
+
+.productMentioned ul {
+  list-style: none;
+  padding: 0;
+}
+
+.productMentioned ul li {
+  margin-bottom: 0.5rem;
+}
+
+.productMentioned ul li a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.productMentioned ul li a:hover {
+  text-decoration: underline;
+}
+
+.socialShare {
+  position: fixed;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shareButton {
+  background: #2563eb;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.shareButton:hover {
+  background: #1d4ed8;
+}
+
+.commentsSection {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.commentsSection h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212121;
+  margin-bottom: 1rem;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.commentInput {
+  width: 100%;
+  height: 100px;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  resize: none;
+}
+
+.submitButton {
+  background: #2563eb;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submitButton:hover {
+  background: #1d4ed8;
+}
+
+.commentList {
+  list-style: none;
+  padding: 0;
+}
+
+.comment {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 0;
+}
+
+.comment p {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.comment span {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.suggestedPosts {
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.suggestedPosts h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #212121;
+  margin-bottom: 1rem;
+}
+
+.suggestedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.suggestedCard {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.suggestedCard a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.suggestedImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.suggestedContent {
+  padding: 1rem;
+}
+
+.suggestedContent h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #212121;
+  margin: 0 0 0.5rem;
+}
+
+.suggestedContent span {
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6b7280;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .blogPost {
+    padding: 1rem;
+  }
+
+  .featuredImage {
+    height: 300px;
+    background-attachment: scroll; /* Disable parallax on mobile */
+  }
+
+  .postTitle {
+    font-size: 1.5rem;
+  }
+
+  .metadata {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .socialShare {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem 0;
+    transform: none;
+  }
+
+  .shareButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .suggestedGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}

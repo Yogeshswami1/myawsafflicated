@@ -1,0 +1,91 @@
+.featureSection {
+  padding: 4rem 2rem;
+  background-color: #f9fafb;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: #1f2937;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featureCard {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+@media (max-width: 1024px) {
+  .featureSection .featureGrid {
+    display: flex !important;
+    flex-wrap: nowrap !important; /* Prevent wrapping on mobile */
+    overflow-x: auto !important; /* Enable horizontal scrolling */
+    justify-content: flex-start !important; /* Align cards to the start */
+    padding: 0 1rem !important; /* Add padding for better spacing */
+    scroll-behavior: smooth !important; /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
+  }
+
+  .featureSection .featureGrid::-webkit-scrollbar {
+    display: none !important; /* Hide scrollbar on Webkit browsers (Chrome, Safari) */
+  }
+
+  .featureSection .featureGrid {
+    -ms-overflow-style: none !important; /* Hide scrollbar on Edge */
+    scrollbar-width: none !important; /* Hide scrollbar on Firefox */
+  }
+
+  .featureCard {
+    flex: 0 0 200px !important; /* Fixed width for mobile cards */
+    min-width: 200px !important; /* Ensure cards don't shrink */
+  }
+
+  .title {
+    font-size: 2rem; /* Slightly smaller title on mobile */
+  }
+
+  .cardTitle {
+    font-size: 1.25rem; /* Slightly smaller card title on mobile */
+  }
+
+  .cardDescription {
+    font-size: 0.9rem; /* Slightly smaller description on mobile */
+  }
+
+  .icon {
+    font-size: 2.5rem; /* Slightly smaller icon on mobile */
+  }
+}

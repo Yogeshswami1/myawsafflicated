@@ -1,0 +1,36 @@
+.layout {
+  min-height: 100vh;
+}
+
+.sider {
+  background: #001529 !important; /* Dark blue background for sidebar */
+  color: #fff;
+}
+
+.logo {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #002140; /* Slightly darker shade for logo area */
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.logo h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.menu {
+  background: #001529 !important;
+}
+
+.content {
+  margin: 24px 16px;
+  padding: 24px;
+  background: #fff;
+  min-height: 280px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

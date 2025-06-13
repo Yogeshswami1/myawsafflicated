@@ -1,0 +1,76 @@
+.adminPanel {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.message {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.message:empty {
+  display: none;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.affiliateLink {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.affiliateLink input {
+  flex: 1;
+}
+
+.formActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.productItem {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.productItem h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.productItem p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 5px 0;
+}

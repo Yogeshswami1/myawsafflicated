@@ -1,0 +1,150 @@
+.adminPage {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.adminPage h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.formGroup label {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="number"],
+.formGroup input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.formGroup input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.affiliateLinkGroup {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.affiliateLinkGroup input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.addLink,
+.removeLink {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addLink {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.addLink:hover {
+  background-color: #218838;
+}
+
+.removeLink {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.removeLink:hover {
+  background-color: #c82333;
+}
+
+.submitButton {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.message:empty {
+  display: none;
+}
+
+.message:not(:empty) {
+  background-color: #e7f3fe;
+  color: #31708f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .adminPage {
+    padding: 15px;
+  }
+
+  .adminPage h1 {
+    font-size: 1.5rem;
+  }
+
+  .formGroup input[type="text"],
+  .formGroup input[type="number"],
+  .formGroup input[type="file"] {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .affiliateLinkGroup {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .submitButton {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,246 @@
+.shopContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px); /* Adjust for Navbar height */
+  padding: 2rem;
+  background: #f1f3f5; /* Light gray background like ShopPage */
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212121;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #4b5563;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.shopButton {
+  background: #ff9f00; /* Flipkart's yellow-orange */
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.shopButton:hover {
+  background: #fb8c00; /* Darker shade on hover */
+}
+
+.shopPage {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.filters {
+  width: 250px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filters h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.filterGroup {
+  margin-bottom: 20px;
+}
+
+.filterGroup label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.filterGroup select,
+.filterGroup input[type="number"],
+.filterGroup input[type="range"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.filterGroup input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.filterGroup div {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 1024px) {
+  /* Shop Container Adjustments */
+  .shopContainer {
+    padding: 1.5rem;
+    min-height: calc(100vh - 50px); /* Adjust for smaller Navbar height */
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .shopButton {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Shop Page Adjustments */
+  .shopPage {
+    flex-direction: column; /* Stack filters and grid vertically */
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .filters {
+    width: 100%; /* Full width on mobile */
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .filters h2 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+  }
+
+  .filterGroup {
+    margin-bottom: 15px;
+  }
+
+  .filterGroup label {
+    font-size: 0.9rem;
+  }
+
+  .filterGroup select,
+  .filterGroup input[type="number"],
+  .filterGroup input[type="range"] {
+    padding: 6px;
+    font-size: 0.9rem;
+  }
+
+  .filterGroup input[type="checkbox"] {
+    margin-right: 4px;
+  }
+
+  .filterGroup div {
+    font-size: 0.8rem;
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Slightly smaller cards */
+    gap: 15px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Shop Container Adjustments */
+  .shopContainer {
+    padding: 1rem;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .shopButton {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Shop Page Adjustments */
+  .shopPage {
+    padding: 5px;
+  }
+
+  .filters {
+    padding: 10px;
+  }
+
+  .filters h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .filterGroup {
+    margin-bottom: 10px;
+  }
+
+  .filterGroup label {
+    font-size: 0.85rem;
+  }
+
+  .filterGroup select,
+  .filterGroup input[type="number"],
+  .filterGroup input[type="range"] {
+    padding: 5px;
+    font-size: 0.85rem;
+  }
+
+  .filterGroup div {
+    font-size: 0.75rem;
+  }
+
+  .productGrid {
+    display: flex; /* Switch to flex for horizontal scrolling */
+    flex-wrap: nowrap !important; /* Prevent wrapping on mobile */
+    overflow-x: auto !important; /* Enable horizontal scrolling */
+    justify-content: flex-start !important; /* Align cards to the start */
+    padding: 10px !important; /* Add padding for better spacing */
+    scroll-behavior: smooth !important; /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
+  }
+
+  .productGrid::-webkit-scrollbar {
+    display: none !important; /* Hide scrollbar on Webkit browsers (Chrome, Safari) */
+  }
+
+  .productGrid {
+    -ms-overflow-style: none !important; /* Hide scrollbar on Edge */
+    scrollbar-width: none !important; /* Hide scrollbar on Firefox */
+  }
+
+  .productGrid > * {
+    flex: 0 0 200px !important; /* Fixed width for mobile cards */
+    min-width: 200px !important; /* Ensure cards don't shrink */
+  }
+}

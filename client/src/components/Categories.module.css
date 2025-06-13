@@ -1,0 +1,82 @@
+.categoriesSection {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #1f2937;
+}
+
+.categoriesContainer {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem;
+  scroll-behavior: smooth;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;           /* ✅ Ensures container doesn't overflow */
+  max-width: 90vw;       /* ✅ Prevents horizontal scroll on the whole page */
+  box-sizing: border-box; /* ✅ Ensures padding doesn't cause overflow */
+   scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+
+.categoriesContainer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+.categoriesContainer::-webkit-scrollbar {
+  height: 8px;
+}
+
+.categoriesContainer::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.categoriesContainer::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.categoryCard {
+    flex: 0 0 200px;     /* Fixed width */
+  max-width: 200px;    /* Avoid accidental stretching */
+  min-width: 200px;
+  background: #f9fafb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  text-align: center;
+}
+.categoriesSection {
+  overflow-x: hidden;
+}
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  transition: transform 0.5s;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.tag {
+  display: inline-block;
+  background: #e5e7eb;
+  color: #6b7280;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}

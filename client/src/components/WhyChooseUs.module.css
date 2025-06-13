@@ -1,0 +1,116 @@
+.whyChooseUs {
+  position: relative;
+  padding: 4rem 2rem;
+  background: #f1f5f9; /* Softer off-white for section background */
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1); /* Subtle grey-blue gradient */
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827; /* Darker grey for title */
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin-bottom: 3rem;
+}
+
+.metricsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* Default for desktop: cards will wrap */
+}
+
+.metricCard {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 220px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Slightly darker shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: #3b82f6; /* Softer blue for icons */
+}
+
+.metricValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1d4ed8; /* Deeper blue for metric values */
+  margin-bottom: 0.5rem;
+}
+
+.metricTitle {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+@media (max-width: 1024px) {
+  .whyChooseUs .content .metricsContainer {
+    display: flex !important;
+    flex-wrap: nowrap !important; /* Prevent wrapping on mobile */
+    overflow-x: auto !important; /* Enable horizontal scrolling */
+    justify-content: flex-start !important; /* Align cards to the start */
+    padding: 0 1rem !important; /* Add padding for better spacing */
+    scroll-behavior: smooth !important; /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
+  }
+
+  .whyChooseUs .content .metricsContainer::-webkit-scrollbar {
+    display: none !important; /* Hide scrollbar on Webkit browsers (Chrome, Safari) */
+  }
+
+  .whyChooseUs .content .metricsContainer {
+    -ms-overflow-style: none !important; /* Hide scrollbar on Edge */
+    scrollbar-width: none !important; /* Hide scrollbar on Firefox */
+  }
+
+  .metricCard {
+    flex: 0 0 180px !important; /* Fixed width for mobile cards */
+    min-width: 180px !important; /* Ensure cards don't shrink */
+  }
+
+  .title {
+    font-size: 2rem; /* Slightly smaller title on mobile */
+  }
+
+  .subtitle {
+    font-size: 1rem; /* Slightly smaller subtitle on mobile */
+  }
+
+  .icon {
+    font-size: 2rem; /* Slightly smaller icon on mobile */
+  }
+
+  .metricValue {
+    font-size: 1.75rem; /* Slightly smaller metric value on mobile */
+  }
+
+  .metricTitle {
+    font-size: 0.9rem; /* Slightly smaller metric title on mobile */
+  }
+}

@@ -1,0 +1,363 @@
+.aboutPage {
+  padding: 2rem;
+  background: #f1f3f5;
+  min-height: calc(100vh - 60px);
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 0;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212121;
+  margin: 0 0 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #212121;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Story Timeline */
+.timelineSection {
+  margin-bottom: 4rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #2563eb;
+  transform: translateX(-50%);
+}
+
+.timelineItem {
+  position: relative;
+  width: 50%;
+  padding: 1rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: calc(0.2s * var(--index));
+}
+
+.timelineItem:nth-child(odd) {
+  --index: 1;
+}
+
+.timelineItem:nth-child(even) {
+  --index: 2;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.left {
+  left: 0;
+  text-align: right;
+}
+
+.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timelineContent {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.timelineContent::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background: #2563eb;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.left .timelineContent::before {
+  right: -8px;
+}
+
+.right .timelineContent::before {
+  left: -8px;
+}
+
+.timelineYear {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin: 0 0 0.5rem;
+}
+
+.timelineEvent {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #212121;
+  margin: 0 0 0.5rem;
+}
+
+.timelineDescription {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Meet the Team */
+.teamSection {
+  margin-bottom: 4rem;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teamCard {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.teamCard:hover {
+  transform: translateY(-5px);
+}
+
+.teamImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.teamInfo {
+  padding: 1rem;
+  text-align: center;
+}
+
+.teamName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #212121;
+  margin: 0 0 0.25rem;
+}
+
+.teamRole {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin: 0 0 0.5rem;
+}
+
+.teamBio {
+  font-size: 0.9rem;
+  color: #4b5563;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.teamCard:hover .teamBio {
+  max-height: 100px;
+  opacity: 1;
+}
+
+/* Mission Video */
+.missionSection {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.videoWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.videoWrapper iframe {
+  border-radius: 0.5rem;
+}
+
+.videoNote {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+/* How We Curate Deals */
+.curateSection {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.curateContent {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.curateStep {
+  flex: 1;
+  min-width: 250px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.curateStep h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #212121;
+  margin: 0 0 0.5rem;
+}
+
+.curateStep p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Press Badges & Partner Logos */
+.partnersSection {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.partnerLogos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.partnerLogo {
+  height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.partnerLogo:hover {
+  filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {
+  .aboutPage {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timelineItem {
+    width: 100%;
+    left: 0 !important;
+    text-align: left;
+    padding-left: 40px;
+  }
+
+  .timelineContent::before {
+    left: -28px !important;
+    right: auto !important;
+  }
+
+  .teamImage {
+    height: 150px;
+  }
+
+  .teamName {
+    font-size: 1rem;
+  }
+
+  .teamRole {
+    font-size: 0.8rem;
+  }
+
+  .teamBio {
+    font-size: 0.8rem;
+  }
+
+  .videoWrapper iframe {
+    height: 200px;
+  }
+
+  .curateContent {
+    gap: 1rem;
+  }
+
+  .curateStep {
+    min-width: 100%;
+  }
+
+  .partnerLogos {
+    gap: 1rem;
+  }
+
+  .partnerLogo {
+    height: 40px;
+  }
+}

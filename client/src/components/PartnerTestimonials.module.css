@@ -1,0 +1,220 @@
+.partnerTestimonials {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
+  position: relative;
+  overflow: hidden;
+}
+
+.partnersSection,
+.testimonialsSection {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #2563eb;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.logoWrapper {
+  width: 150px;
+  height: 50px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 0.75rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonialsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.testimonialCard {
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.quote {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.author {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .partnerTestimonials {
+    padding: 2rem 1rem;
+  }
+
+  .partnersSection,
+  .testimonialsSection {
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .title::after {
+    width: 80px;
+    height: 3px;
+  }
+
+  /* Partner Logos Section */
+  .logoContainer {
+    display: flex;
+    flex-wrap: nowrap !important; /* Prevent wrapping on mobile */
+    overflow-x: auto !important; /* Enable horizontal scrolling */
+    justify-content: flex-start !important; /* Align logos to the start */
+    padding: 0 1rem !important; /* Add padding for better spacing */
+    scroll-behavior: smooth !important; /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
+  }
+
+  .logoContainer::-webkit-scrollbar {
+    display: none !important; /* Hide scrollbar on Webkit browsers (Chrome, Safari) */
+  }
+
+  .logoContainer {
+    -ms-overflow-style: none !important; /* Hide scrollbar on Edge */
+    scrollbar-width: none !important; /* Hide scrollbar on Firefox */
+  }
+
+  .logoWrapper {
+    flex: 0 0 120px !important; /* Fixed width for mobile logos */
+    min-width: 120px !important; /* Ensure logos don't shrink */
+    height: 40px;
+  }
+
+  .logo {
+    padding: 0.5rem;
+  }
+
+  /* Testimonials Section */
+  .testimonialsContainer {
+    display: flex;
+    flex-wrap: nowrap !important; /* Prevent wrapping on mobile */
+    overflow-x: auto !important; /* Enable horizontal scrolling */
+    justify-content: flex-start !important; /* Align testimonials to the start */
+    padding: 0 1rem !important; /* Add padding for better spacing */
+    scroll-behavior: smooth !important; /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
+  }
+
+  .testimonialsContainer::-webkit-scrollbar {
+    display: none !important; /* Hide scrollbar on Webkit browsers (Chrome, Safari) */
+  }
+
+  .testimonialsContainer {
+    -ms-overflow-style: none !important; /* Hide scrollbar on Edge */
+    scrollbar-width: none !important; /* Hide scrollbar on Firefox */
+  }
+
+  .testimonialCard {
+    flex: 0 0 250px !important; /* Fixed width for mobile cards */
+    min-width: 250px !important; /* Ensure cards don't shrink */
+    padding: 1.5rem;
+  }
+
+  .quote {
+    font-size: 1.1rem;
+  }
+
+  .author {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .partnerTestimonials {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .title::after {
+    width: 60px;
+    height: 2px;
+  }
+
+  .logoContainer {
+    gap: 2rem;
+  }
+
+  .logoWrapper {
+    flex: 0 0 100px !important;
+    min-width: 100px !important;
+    height: 35px;
+  }
+
+  .logo {
+    padding: 0.4rem;
+  }
+
+  .testimonialsContainer {
+    gap: 1.5rem;
+  }
+
+  .testimonialCard {
+    flex: 0 0 220px !important;
+    min-width: 220px !important;
+    padding: 1rem;
+  }
+
+  .quote {
+    font-size: 1rem;
+  }
+
+  .author {
+    font-size: 0.85rem;
+  }
+}
