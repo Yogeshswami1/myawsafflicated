@@ -1,10 +1,10 @@
 frontend
 
-sudo nano /etc/nginx/sites-available/frontend.yogeshtech.xyz
+sudo nano /etc/nginx/sites-available/dealfinder.yogeshtech.xyz
 
 server {
     listen 80;
-    server_name frontend.yogeshtech.xyz; #  Replace it with your own domain 
+    server_name dealfinder.yogeshtech.xyz; #  Replace it with your own domain 
 
     root /var/www/html/amazon/client/dist; # Replace with the path to your build directory
     index index.html;
@@ -13,10 +13,33 @@ server {
         try_files $uri /index.html;
     }
 
-    error_log /var/log/nginx/frontend.yogeshtech.xyz.log;
-    access_log /var/log/nginx/frontend.yogeshtech.xyz.log;
+    error_log /var/log/nginx/dealfinder.yogeshtech.xyz.log;
+    access_log /var/log/nginx/dealfinder.yogeshtech.xyz.log;
 }
 
-sudo ln -s /etc/nginx/sites-available/frontend.yogeshtech.xyz /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/dealfinder.yogeshtech.xyz /etc/nginx/sites-enabled/
 
 
+backend
+
+sudo nano /etc/nginx/sites-available/backenddeal.yogeshtech.xyz
+
+server {
+    listen 80;
+    server_name backenddeal.yogeshtech.xyz;
+
+    location / {
+        proxy_pass http://localhost:5000;  # Assuming your Node.js app is running on port 3000
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    error_log /var/log/nginx/backenddeal.yogeshtech.xyz.error.log;
+    access_log /var/log/nginx/backenddeal.yogeshtech.xyz.access.log;
+}
+
+
+sudo ln -s /etc/nginx/sites-available/backenddeal.yogeshtech.xyz /etc/nginx/sites-enabled/

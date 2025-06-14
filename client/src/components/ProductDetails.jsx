@@ -317,9 +317,10 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styles from './ProductDetails.module.css';
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 const ProductDetails = () => {
+const apiUrl = import.meta.env.VITE_BACKEND_URL; 
+
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './AdminPage.module.css';
 
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 const AdminPage = () => {
+const apiUrl = import.meta.env.VITE_BACKEND_URL; 
+
   const [formData, setFormData] = useState({
     name: '',
     category: '',

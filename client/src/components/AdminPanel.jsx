@@ -2,9 +2,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { Modal, Button } from 'antd';
 import styles from './AdminPanel.module.css';
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 const AdminPanel = () => {
+const apiUrl = import.meta.env.VITE_BACKEND_URL; 
+
   const [products, setProducts] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);

@@ -112,9 +112,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styles from './BlogPage.module.css';
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 const BlogPage = () => {
+const apiUrl = import.meta.env.VITE_BACKEND_URL; 
+
   const [blogs, setBlogs] = useState([]);
   const [categoryFilter, setCategoryFilter] = useState('');
 

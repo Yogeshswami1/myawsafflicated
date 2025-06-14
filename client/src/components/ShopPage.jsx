@@ -510,9 +510,10 @@ import { onAuthStateChanged } from 'firebase/auth';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import InfiniteScroll from 'react-infinite-scroll-component'; // Import InfiniteScroll
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 const ShopPage = () => {
+const apiUrl = import.meta.env.VITE_BACKEND_URL; 
+
   
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);

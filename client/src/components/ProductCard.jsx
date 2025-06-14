@@ -106,9 +106,10 @@ import styles from './ProductCard.module.css';
 import { Button } from '@mui/material';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 const ProductCard = ({ product, onAddToCart, userUid }) => {
+const apiUrl = import.meta.env.VITE_BACKEND_URL; 
+
   const renderStars = (rating) => {
     const stars = Math.round(rating);
     return '★'.repeat(stars) + '☆'.repeat(5 - stars);
