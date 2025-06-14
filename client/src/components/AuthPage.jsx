@@ -1,6 +1,4 @@
 import React, { useState, useContext, useRef } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import styles from './AuthPage.module.css';
@@ -37,23 +35,9 @@ const AuthPage = () => {
 
   return (
     <div className={styles.container}>
-      <Canvas className={styles.canvas}>
-        <ambientLight intensity={0.6} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} color="#ffffff" />
-        <pointLight position={[-10, -10, -10]} intensity={1} color="#ff6f61" />
-        <Sphere args={[1.2, 64, 64]} position={[0, 0, 0]} scale={2.5}>
-          <MeshDistortMaterial
-            color="#6b21a8"
-            attach="material"
-            distort={0.6}
-            speed={2.5}
-            roughness={0.3}
-            metalness={0.8}
-          />
-        </Sphere>
-        <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={3} />
-      </Canvas>
-
+      <div className={styles.stars}></div>
+      <div className={styles.stars2}></div>
+      <div className={styles.stars3}></div>
       <div className={styles.formContainer}>
         <h2 className={styles.title}>{isLogin ? 'Login' : 'Signup'}</h2>
         {error && <p className={styles.error}>{error}</p>}
