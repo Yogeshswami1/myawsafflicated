@@ -14,7 +14,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-// Middleware
+
 // app.use(cors({ 
 //   origin: ['http://localhost:5173', 'http://localhost:4000'], // Allow both origins
 //   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
@@ -26,6 +26,8 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
 }));app.use(express.json());
+
+
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from uploads folder
