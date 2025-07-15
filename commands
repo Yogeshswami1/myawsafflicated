@@ -43,3 +43,5 @@ server {
 
 
 sudo ln -s /etc/nginx/sites-available/backenddeal.yogeshtech.xyz /etc/nginx/sites-enabled/
+
+
