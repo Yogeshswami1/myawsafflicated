@@ -22,7 +22,7 @@ const app = express();
 // }));app.use(express.json());
 
 app.use(cors({ 
-  origin: ['http://dealfinder.yogeshtech.xyz'], // Allow both origins
+  origin: ['https://dealfinder.yogeshtech.xyz'], // Allow both origins
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
 }));app.use(express.json());

@@ -6,7 +6,7 @@ server {
     listen 80;
     server_name dealfinder.yogeshtech.xyz; #  Replace it with your own domain 
 
-    root /var/www/html/amazon/client/dist; # Replace with the path to your build directory
+    root /var/www/html/myaws/client/dist; # Replace with the path to your build directory
     index index.html;
 
     location / {
