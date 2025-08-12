@@ -45,3 +45,4 @@ server {
 sudo ln -s /etc/nginx/sites-available/backenddeal.yogeshtech.xyz /etc/nginx/sites-enabled/
 
 
+sudo certbot --nginx -d dealfinder.yogeshtech.xyz -d backenddeal.yogeshtech.xyz
