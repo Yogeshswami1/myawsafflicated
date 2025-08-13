@@ -1,4 +1,4 @@
-version: '3'
+version: "3.8"
 services:
   frontend:
     build: ./client
@@ -15,5 +15,8 @@ services:
     restart: always
     env_file:
       - ./server/.env
+    volumes:
+      # Mount the service account into /app inside the container (read-only)
+      - ./server/firebase-service-account.json:/app/firebase-service-account.json:ro
     depends_on:
       - frontend
