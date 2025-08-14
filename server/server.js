@@ -28,7 +28,6 @@ app.use(cors({
   credentials: true
 }));
 
-app.options('*', cors()); // Preflight handle
 
 
 app.use(express.urlencoded({ extended: true }));
