@@ -21,11 +21,14 @@ const app = express();
 //   allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
 // }));app.use(express.json());
 
-app.use(cors({ 
-  origin: ['http://dealfinder.yogeshtech.xyz'], // Allow both origins
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
-}));app.use(express.json());
+app.use(cors({
+  origin: 'http://dealfinder.yogeshtech.xyz',
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization'],
+  credentials: true
+}));
+
+app.options('*', cors()); // Preflight handle
 
 
 app.use(express.urlencoded({ extended: true }));
