@@ -27,6 +27,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type','Authorization'],
   credentials: true
 }));
+app.use(express.json()); // ✅ JSON parser lagao
 
 
 
