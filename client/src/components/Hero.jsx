@@ -71,7 +71,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Discover Smarter. Shop Faster. Save More. Yogesh kumar...
+          Discover Smarter. Shop Faster. Save More. Yogesh kumar....
         </motion.h1>
         <div className={styles.ctaContainer}>
           <Link to="/shop" className={styles.ctaButton}>
